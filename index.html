@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-	<title>Welcome, Baby Flane!</title>
+  <title>Welcome, Baby Flane!</title>
   <meta charset="UTF-8">
 
   <!-- CSS -->
@@ -17,10 +17,11 @@
   <script id="sections-template" type="text/x-handlebars-template">
     <div class="wordBlock">
       <p class="wordTitle">{{word}}</p>
-      {{#if example}}
+      <p class="circle"></p>
+<!--       {{#if example}}
         <p class="text-chunk hidden" id="example-chunk"><span class="label">example: </span><span class="example">{{example}}</span></p>
       {{/if}}
-      <p class="text-chunk hidden" id="def-chunk"><span class="label">definition: </span>(<span class="partofspeech">{{partofspeech}}</span>)<span class="definition"> {{definition}}</span></p>
+      <p class="text-chunk hidden" id="def-chunk"><span class="label">definition: </span>(<span class="partofspeech">{{partofspeech}}</span>)<span class="definition"> {{definition}}</span></p> -->
     </div>    
   </script>
 </head>
@@ -28,17 +29,17 @@
 <body>
   <!-- Header -->
   <div id="header-container" class="header-footer">
-    <a href="/"><h1 id="page-title">Word Quiz!</h1></a>
-    <a href="https://docs.google.com/forms/d/1rBgk-O9bqghxz3eEp04HYkELbDy4R3_CCuV_CHzXj1s/viewform" id="submit-link" target="_blank;">Add a word.</a>
+    <a href="/"><h1 id="page-title">Welcome, Baby Flane!</h1></a>
+    <a id="submit-link" onclick="loadTemplates()">Don't like this color? Try another.</a>
   </div>
 
   <!-- Content -->
   <div id="main">
-      <ul id="nav-list">
+<!--       <ul id="nav-list">
         <li onclick="showExample()"><p class="nav-item" >Example</p></li>
         <li onclick="showDef()"><p class="nav-item" >Definition</p></li>
-        <li onclick="loadTemplates()"><p class="nav-item" >New</p></li>
-      </ul>
+        <li onclick="loadTemplates()"><p class="nav-item" >Don't like this color? Try another.</p></li>
+      </ul> -->
     <div id="content"></div>
   </div>
 

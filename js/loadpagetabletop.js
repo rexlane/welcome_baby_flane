@@ -33,7 +33,7 @@ function loadTemplates() {
   var random_word = context.body[random_index]
   var current_color = random_word.definition;
   console.log(current_color)
-   $("#content").css("color",current_color);
+   $("body").css("background-color",current_color);
     $("#content").html(template(random_word));
   //  $(".wordTitle").css("color":)
 };
