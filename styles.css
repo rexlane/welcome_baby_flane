@@ -1,0 +1,217 @@
+/*General*/
+  html {
+    /*background-color: #d3d3d3;*/
+  }
+
+  body {
+    background-color: #f6f6f6;
+    color: #2a2a2a;
+    font-family: Gill Sans, sans-serif;
+    font-size: 14pt;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+/*Header*/
+  #header-container {
+    /*width: 100%;*/
+    padding: 15px 75px 10px;
+    /*margin-bottom: 100px;*/
+    background-color: #3f3f3f;
+    color: #f6f6f6;
+    overflow: hidden;
+
+  }
+
+  #page-title {
+    float: left;
+    font-family: Georgia, serif;
+    font-size: 18pt;
+    font-style: italic;
+  } 
+
+  #submit-link {
+    float: right;
+    font-family: Gill Sans, sans-serif;
+    font-size: 12pt;
+    padding-top: 3pt;
+  }
+
+  a {
+    color: #f6f6f6;
+    text-decoration: none;
+  }
+
+
+  a:hover {
+    color: #4472B9;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+   
+
+/*Buttons*/
+  #nav-list {
+    width: 60%;
+    max-width: 500px;
+    margin: 20px auto 50px;
+    text-align: center;
+  }
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+    padding: 10px;
+    margin: 10px 3%;
+    background-color: #7c9cce;
+    color: #f6f6f6;
+    width: 20%;
+    /*max-width: 100px;*/
+    /*min-width: 20px;*/
+  }
+
+  .nav-item {
+    font-size: 12pt;
+    text-align: center;
+  }
+
+
+  li:hover {
+    background-color: #29446F;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+
+
+/*Word block*/
+
+  #main {
+    /*width: 100%;*/
+  }
+
+  #content {
+    width: 60%;
+    max-width: 500px;
+    /*min-height: 250px;*/
+    margin: 0 auto;
+  }
+
+  .wordBlock  {
+    text-align: center;
+    font-size: 14pt;
+    font-family: Gill Sans, sans-serif;
+  }
+
+  .wordTitle {
+    font-weight: bold;
+    font-size: 42pt;
+    font-family: Georgia, serif;
+    margin: 100px 0 70px;
+  }
+
+  .partofspeech {
+    font-family: Gill Sans, sans-serif;
+    font-style: italic;
+    font-weight: normal;
+  }
+
+  .text-chunk  {
+    margin-bottom: 20pt;
+    line-height: 150%;
+  }
+
+  .label {
+    font-weight: bold;
+    /*margin-bottom: 6pt;*/
+  }
+
+  .example {
+    /*font-style: italic;*/
+  }
+
+/*  button {
+    display: block;
+    width: 250px;
+    padding: 10px;
+    background-color: #4472B9;
+    color: #f6f6f6 ;
+    font-family: Gill Sans, sans-serif;
+    font-size: 18px;
+    text-align: center;
+    border: none;
+    margin: 0 auto;
+  }
+
+  button:hover {
+    background-color: #29446F;
+    text-decoration: underline;
+    cursor: pointer;
+  }
+
+  button:focus {
+    outline: 0;
+  }*/
+
+
+/*
+  #footer-container {
+   padding: 25px 75px;
+  }
+
+  #copyright {
+    float: right;
+    font-size: 12pt;
+  }
+
+*/
+@media (max-width: 500px) {
+
+  #main {
+    width: 80%;
+    margin: 0 auto;
+  }  
+
+  #header-container {
+    /*width: 100%;*/
+    padding: 15px 0 5px 0;
+  }
+
+  #page-title, #submit-link {
+/*    float: none;*/
+    clear: both;
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  #submit-link {
+    padding: 6pt 0;
+  }
+
+  #content {
+    width: 100%;
+    max-width: 100%;
+    min-height: 100%;
+    margin: 0 auto;
+  }
+
+  #nav-list {
+    width: 100%;
+  }
+
+  li {
+    width: 100%;
+    margin: 5px 0;
+  }  
+
+  .nav-item {
+    font-size: 14pt;
+  }
+
+/*  button {
+    width: 100%;
+  }*/
+}
