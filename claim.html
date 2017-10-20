@@ -17,12 +17,7 @@
   <script id="sections-template" type="text/x-handlebars-template">
     <div class="wordBlock">
       <p class="wordTitle">{{word}}</p>
-      <a id="claim_link" onclick="showForm()">Claim this color.</a>
-      <form id="claim_form">
-          Your name:<br>
-          <input type="text"><br>
-          <input type="submit" value="Claim It" onclick="submitClaimForm()">
-      </form>
+      
     </div>    
   </script>
 </head>
@@ -36,6 +31,11 @@
 
   <!-- Content -->
   <div id="main">
+<!--       <ul id="nav-list">
+        <li onclick="showExample()"><p class="nav-item" >Example</p></li>
+        <li onclick="showDef()"><p class="nav-item" >Definition</p></li>
+        <li onclick="loadTemplates()"><p class="nav-item" >Don't like this color? Try another.</p></li>
+      </ul> -->
     <div id="content"></div>
   </div>
 
