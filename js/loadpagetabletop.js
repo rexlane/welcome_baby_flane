@@ -4,10 +4,11 @@ var context = {
 
 $( document ).ready(function() {
 // var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1ZgC8FlfyqXXJUYJB4B0fWvPxOGQoMTOnoC2bXnTdhao/pubhtml'
-  var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1eZa-5mbMd61s-LV2IjIqWIaLGsRWpmX9vcDkUDmJW4c/pubhtml'
+  /*var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1eZa-5mbMd61s-LV2IjIqWIaLGsRWpmX9vcDkUDmJW4c/pubhtml'*/
+  var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1a2r7zh1kVtZ0Uywzh4MqrJGuXFdc5Bc6jbdv3U8s17c/pubhtml'
+
   initializeTabletopObject(spreadsheet_url);
   template = Handlebars.compile($("#sections-template").html());
-  /*submitForm();*/
 });
 
 function initializeTabletopObject(dataSpreadsheet){
@@ -120,7 +121,8 @@ function submitForm() {
 /*      console.log(loadTemplates());
 */      // Fire off the request to /form.php
       request = $.ajax({
-          url: "https://script.google.com/macros/s/AKfycby5HWQFUFs2iR--xuidcgCzsoj4mNt6wkdy53U5XazYVasNv70/exec",
+          url: "https://script.google.com/macros/s/AKfycbwhdOAa-AF9lRm3lNUaWcA0PI8bUK94NFvvX1ERInqPlIQgBoRH/exec",
+/*          url: "https://script.google.com/macros/s/AKfycby5HWQFUFs2iR--xuidcgCzsoj4mNt6wkdy53U5XazYVasNv70/exec",*/
           type: "post",
           data: serializedData
       });
