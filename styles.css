@@ -1,12 +1,8 @@
 /*General*/
-  html {
-    /*background-color: #d3d3d3;*/
-  }
 
   body {
     background-color: #f6f6f6;
-/*    color: #2a2a2a;
-*/    font-family: Gill Sans, sans-serif;
+    font-family: Gill Sans, sans-serif;
     font-size: 14pt;
   }
 
@@ -16,13 +12,10 @@
 
 /*Header*/
   #header-container {
-    /*width: 100%;*/
     padding: 15px 75px 10px;
-    /*margin-bottom: 100px;*/
     background-color: #3f3f3f;
     color: #f6f6f6;
     overflow: hidden;
-
   }
 
   #page-title {
@@ -126,7 +119,6 @@
   }
 
   #page-title, #submit-link {
-/*    float: none;*/
     clear: both;
     width: 100%;
     margin: 0 auto;

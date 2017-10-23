@@ -3,8 +3,6 @@ var context = {
 };
 
 $( document ).ready(function() {
-// var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1ZgC8FlfyqXXJUYJB4B0fWvPxOGQoMTOnoC2bXnTdhao/pubhtml'
-  /*var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1eZa-5mbMd61s-LV2IjIqWIaLGsRWpmX9vcDkUDmJW4c/pubhtml'*/
   var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1a2r7zh1kVtZ0Uywzh4MqrJGuXFdc5Bc6jbdv3U8s17c/pubhtml'
 
   initializeTabletopObject(spreadsheet_url);
@@ -26,7 +24,6 @@ function pullDataFromTabletop(data, tabletop) {
     context["body"].push(words[i]);
     color = words[i].word;
   }
-/*  loadTemplates();*/
 randomIndex();
 };
 
@@ -49,6 +46,7 @@ function nextIndex() {
 }
 
 function loadTemplates(index) {
+
   /*get entry for selected color*/
   window.cur_index = index;
   var cur_color = context.body[index];
@@ -66,12 +64,6 @@ function loadTemplates(index) {
   formatPage(current_color_code, current_text_color);
   prepareForm(current_color_name);
   submitForm();
-/*
-    $('#claim_form').submit(
-        function() {
-          var inputs = $('#claim_form :input');
-          console.log(inputs);
-  });*/
 
 };
 
@@ -102,8 +94,6 @@ function submitForm() {
           request.abort();
        }
       // setup some local variables
-      
-/*      var $form = $("#claim_form");*/
       var $form = $(this);
 
       // Let's select and cache all the fields
@@ -118,23 +108,23 @@ function submitForm() {
       $inputs.prop("disabled", true);
 
       console.log(serializedData);
-/*      console.log(loadTemplates());
-*/      // Fire off the request to /form.php
+      // Fire off the request to /form.php
       request = $.ajax({
           url: "https://script.google.com/macros/s/AKfycbwhdOAa-AF9lRm3lNUaWcA0PI8bUK94NFvvX1ERInqPlIQgBoRH/exec",
-/*          url: "https://script.google.com/macros/s/AKfycby5HWQFUFs2iR--xuidcgCzsoj4mNt6wkdy53U5XazYVasNv70/exec",*/
           type: "post",
           data: serializedData
       });
 
       // Callback handler that will be called on success
       request.done(function (response, textStatus, jqXHR){
-          // Log a message to the console
+
+      // Log a message to the console
           console.log("Hooray, it worked!");
       });
 
       // Callback handler that will be called on failure
       request.fail(function (jqXHR, textStatus, errorThrown){
+
           // Log the error to the console
           console.error(
               "The following error occurred: "+
@@ -145,16 +135,13 @@ function submitForm() {
       // Callback handler that will be called regardless
       // if the request failed or succeeded
       request.always(function () {
+
           // Reenable the inputs
           $inputs.prop("disabled", false);
       });
 
-/*  });
-*//*})*/
 });
 }
-
-
 
 function showForm() {
   $("#claim_form").toggle();
