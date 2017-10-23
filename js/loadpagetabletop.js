@@ -7,6 +7,7 @@ $( document ).ready(function() {
   var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1eZa-5mbMd61s-LV2IjIqWIaLGsRWpmX9vcDkUDmJW4c/pubhtml'
   initializeTabletopObject(spreadsheet_url);
   template = Handlebars.compile($("#sections-template").html());
+  submitForm();
 });
 
 function initializeTabletopObject(dataSpreadsheet){
@@ -24,56 +25,66 @@ function pullDataFromTabletop(data, tabletop) {
     context["body"].push(words[i]);
     color = words[i].word;
   }
-  loadTemplates();
+/*  loadTemplates();*/
+randomIndex();
 };
 
-function loadTemplates() {
-  var context_length = context.body.length;
-  var random_index = Math.floor((Math.random() * context_length) +1);
-  var random_word = context.body[random_index]
-  var current_color_name = random_word.word;
-  var current_color = random_word.definition;
-  var text_color = random_word.textcolor;
-  console.log(text_color);
-/*  console.log(current_color)*/
-   $("body").css("background-color",current_color);
-   $("#content").html(template(random_word));
-   $(".change_color").css("color",text_color);
-   $("#claim_link").css("color",text_color);
-   $("#claim_form").hide();
-/*    loadNext(random_index);
-*//*
-    $('#claim_form').submit(
-        function() {
-          var inputs = $('#claim_form :input');
-          console.log(inputs);
-  });*/
-  return current_color;
-};
 
 /*returns random index and calls findColor*/
-function randomIndex(context_length) {
+function randomIndex() {
+  var context_length = context.body.length;
   var random_index = Math.floor((Math.random() * context_length) +1);
   loadTemplates(random_index);
 }
 
 /*returns next index and calls findWord*/
-function nextIndex(current_index) {
-    var next_index = current_index + 1;
-    return next_index;
+function nextIndex() {
+    var context_length = context.body.length;
+    if (context_length > cur_index)
+      var next_index = cur_index + 1;
+    else 
+        var next_index = 0;
+    console.log(next_index);
+    loadTemplates(next_index);
 }
 
-function findWord(index) {
-  var chosen_word = context.body[index]
-  var current_color_name = random_word.word;
-  var current_color = random_word.definition;
+function loadTemplates(index) {
+  /*get entry for selected color*/
+  window.cur_index = index;
+  var cur_color = context.body[index];
+
+  /*send cur_color values to html template*/
+   $("#content").html(template(cur_color));
+   $("#claim_form").hide();
+
+  /*create variables for cur_color attributes*/
+  var current_color_name = cur_color.word;
+  var current_color_code = cur_color.definition;
+  var current_text_color = cur_color.textcolor;
+
+  /*call formatPage() with cur_color variables*/
+  formatPage(current_color_code, current_text_color);
+  prepareForm(current_color_name);
+/*
+    $('#claim_form').submit(
+        function() {
+          var inputs = $('#claim_form :input');
+          console.log(inputs);
+  });*/
+
+};
+
+function formatPage(current_color_code, current_text_color) {
+   $("body").css("background-color",current_color_code);
+   $(".change_color").css("color",current_text_color);
+   $("#claim_link").css("color",current_text_color);
 }
 
-function putWord(chosen_word) {
-
-}
-
-
+function prepareForm(current_color_name) {
+    var text = '<input type="text" name="color" value="' ;
+    text = text + current_color_name + '">';
+    $("#color_input").html(text);
+  }
 
 
 function submitForm() {
@@ -81,9 +92,8 @@ function submitForm() {
   var request;
 
   // Bind to the submit event of our form
-/*  $("#claim_form").submit(function(event){
-  var request;
-  event.preventDefault();*/
+ $("#claim_form").submit(function(event){
+    event.preventDefault();
 
       // Prevent default posting of form - put here to work in case of errors
 /*      event.preventDefault();
@@ -94,14 +104,14 @@ function submitForm() {
       }
       // setup some local variables
 /*      var $form = $(this);
-*/      var $form = $("#claim_form");
+*/      var $form = $(this);
 
       // Let's select and cache all the fields
       var $inputs = $form.find("input, select, button, textarea");
 
       // Serialize the data in the form
       var serializedData = $form.serialize();
-      serializedData = serializedData + "&color=" + loadTemplates();
+
       // Let's disable the inputs for the duration of the Ajax request.
       // Note: we disable elements AFTER the form data has been serialized.
       // Disabled form elements will not be serialized.
@@ -139,7 +149,8 @@ function submitForm() {
       });
 
 /*  });
-*/}
+*/})
+}
 
 
 
