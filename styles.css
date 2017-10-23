@@ -55,9 +55,33 @@
   font-size: 120%;
 }
 
+#claim_form {
+  padding: 50px 20px;
+  margin: 20px;
+  color: #3f3f3f;
+  background-color: #C0C0C0;
+  border: 2px #3f3f3f solid;
+}
+
+#name_input {
+   background-color: #f6f6f6;
+   width: 80%;
+   border: 1px solid #3f3f3f;
+   margin: 30px 10px;
+   padding: 10px;
+}
+
+#submit_button {
+    font-family: Gill Sans, sans-serif;
+    font-size: 12pt;
+    padding: 10px;
+
+}
+
 .change_color {
   color:#3f3f3f;
 }
+
 
 /*Word block*/
 
@@ -86,8 +110,10 @@
     /*margin-bottom: 6pt;*/
   }
 
+
+
  
-@media (max-width: 500px) {
+@media (max-width: 800px) {
 
   #main {
     width: 80%;
@@ -96,7 +122,7 @@
 
   #header-container {
     /*width: 100%;*/
-    padding: 15px 0 5px 0;
+    padding: 30px 5px 20px 5px;
   }
 
   #page-title, #submit-link {
@@ -107,8 +133,13 @@
     text-align: center;
   }
 
+#page-title {
+  display:none;
+}
+
   #submit-link {
-    padding: 6pt 0;
+    padding: 20pt 0;
+    font-size: 120%;
   }
 
   #content {

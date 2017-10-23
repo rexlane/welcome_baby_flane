@@ -18,16 +18,13 @@
     <div class="wordBlock">
       <p class="wordTitle change_color">{{word}}</p>
       <a id="claim_link" onclick="showForm()">Claim this color.</a>
-      <!-- <form id="claim_form">
- -->
-<!--       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
- -->      <form id="claim_form" >
-          <label for="name">Your name:</label>
-          <input type="text" name="name"><br>
-          <label for="color">Color:</label>
-          <span id="color_input"></span>
-          <input type="submit" value="Claim it." class="change_color">
-      </form>
+      <form id="claim_form" >
+        <label for="name" id="form_label_name">Your name:</label>
+        <br>
+        <input type="text" name="name" id="name_input"><br>
+        <span id="color_input" class="hidden"></span>
+        <input type="submit" id = "submit_button" value="Claim it." >
+    </form>
     </div>    
   </script>
 </head>
