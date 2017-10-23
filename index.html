@@ -16,15 +16,15 @@
   <!-- Templates -->
   <script id="sections-template" type="text/x-handlebars-template">
     <div class="wordBlock">
-      <p class="wordTitle">{{word}}</p>
+      <p class="wordTitle change_color">{{word}}</p>
       <a id="claim_link" onclick="showForm()">Claim this color.</a>
       <!-- <form id="claim_form">
  -->
 <!--       <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
- -->      <form id="claim_form" onsubmit="submitForm()">
+ -->      <form id="claim_form" onsubmit="submitForm()" >
           <label for="name">Your name:</label>
           <input type="text" name="name"><br>
-          <input type="submit" value="Claim It">
+          <input type="submit" value="Claim it." class="change_color">
       </form>
     </div>    
   </script>

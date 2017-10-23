@@ -5,8 +5,8 @@
 
   body {
     background-color: #f6f6f6;
-    color: #2a2a2a;
-    font-family: Gill Sans, sans-serif;
+/*    color: #2a2a2a;
+*/    font-family: Gill Sans, sans-serif;
     font-size: 14pt;
   }
 
@@ -44,53 +44,22 @@
     text-decoration: none;
   }
 
-
   a:hover {
     color: #4472B9;
     text-decoration: underline;
     cursor: pointer;
   }
    
+#claim_link {
+  font-style: italic;
+  font-size: 120%;
+}
 
-/*Buttons*/
-  #nav-list {
-    width: 60%;
-    max-width: 500px;
-    margin: 20px auto 50px;
-    text-align: center;
-  }
-
-  li {
-    display: inline-block;
-    list-style-type: none;
-    padding: 10px;
-    margin: 10px 3%;
-    background-color: #7c9cce;
-    color: #f6f6f6;
-    width: 20%;
-    /*max-width: 100px;*/
-    /*min-width: 20px;*/
-  }
-
-  .nav-item {
-    font-size: 12pt;
-    text-align: center;
-  }
-
-
-  li:hover {
-    background-color: #29446F;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-
+.change_color {
+  color:#3f3f3f;
+}
 
 /*Word block*/
-
-  #main {
-    /*width: 100%;*/
-  }
 
   #content {
     width: 60%;
@@ -112,61 +81,12 @@
     margin: 100px 0 70px;
   }
 
-  .partofspeech {
-    font-family: Gill Sans, sans-serif;
-    font-style: italic;
-    font-weight: normal;
-  }
-
-  .text-chunk  {
-    margin-bottom: 20pt;
-    line-height: 150%;
-  }
-
   .label {
     font-weight: bold;
     /*margin-bottom: 6pt;*/
   }
 
-  .example {
-    /*font-style: italic;*/
-  }
-
-/*  button {
-    display: block;
-    width: 250px;
-    padding: 10px;
-    background-color: #4472B9;
-    color: #f6f6f6 ;
-    font-family: Gill Sans, sans-serif;
-    font-size: 18px;
-    text-align: center;
-    border: none;
-    margin: 0 auto;
-  }
-
-  button:hover {
-    background-color: #29446F;
-    text-decoration: underline;
-    cursor: pointer;
-  }
-
-  button:focus {
-    outline: 0;
-  }*/
-
-
-/*
-  #footer-container {
-   padding: 25px 75px;
-  }
-
-  #copyright {
-    float: right;
-    font-size: 12pt;
-  }
-
-*/
+ 
 @media (max-width: 500px) {
 
   #main {
@@ -210,8 +130,6 @@
   .nav-item {
     font-size: 14pt;
   }
-
-/*  button {
-    width: 100%;
-  }*/
 }
+
+

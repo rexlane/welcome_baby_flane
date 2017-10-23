@@ -7,8 +7,7 @@ $( document ).ready(function() {
   var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1eZa-5mbMd61s-LV2IjIqWIaLGsRWpmX9vcDkUDmJW4c/pubhtml'
   initializeTabletopObject(spreadsheet_url);
   template = Handlebars.compile($("#sections-template").html());
-/*  submitForm();
-*/});
+});
 
 function initializeTabletopObject(dataSpreadsheet){
   Tabletop.init({
@@ -34,10 +33,13 @@ function loadTemplates() {
   var random_word = context.body[random_index]
   var current_color_name = random_word.word;
   var current_color = random_word.definition;
+  var text_color = random_word.textcolor;
+  console.log(text_color);
 /*  console.log(current_color)*/
    $("body").css("background-color",current_color);
-   $(".wordTitle").css("color","orange")
    $("#content").html(template(random_word));
+   $(".change_color").css("color",text_color);
+   $("#claim_link").css("color",text_color);
    $("#claim_form").hide();
 /*    loadNext(random_index);
 *//*
@@ -49,21 +51,17 @@ function loadTemplates() {
   return current_color;
 };
 
-
-
 /*returns random index and calls findColor*/
-function randomIndex() {
-  var context_length = context.body.length;
+function randomIndex(context_length) {
   var random_index = Math.floor((Math.random() * context_length) +1);
-  findWord(random_index);
+  loadTemplates(random_index);
 }
 
 /*returns next index and calls findWord*/
 function nextIndex(current_index) {
     var next_index = current_index + 1;
-    findWord(next_index);
+    return next_index;
 }
-
 
 function findWord(index) {
   var chosen_word = context.body[index]
@@ -74,6 +72,7 @@ function findWord(index) {
 function putWord(chosen_word) {
 
 }
+
 
 
 
