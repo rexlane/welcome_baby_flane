@@ -7,7 +7,7 @@ $( document ).ready(function() {
   var spreadsheet_url = 'https://docs.google.com/spreadsheets/d/1eZa-5mbMd61s-LV2IjIqWIaLGsRWpmX9vcDkUDmJW4c/pubhtml'
   initializeTabletopObject(spreadsheet_url);
   template = Handlebars.compile($("#sections-template").html());
-  submitForm();
+  /*submitForm();*/
 });
 
 function initializeTabletopObject(dataSpreadsheet){
@@ -30,21 +30,20 @@ randomIndex();
 };
 
 
-/*returns random index and calls findColor*/
+/*returns random index and calls loadTemplates*/
 function randomIndex() {
   var context_length = context.body.length;
   var random_index = Math.floor((Math.random() * context_length) +1);
   loadTemplates(random_index);
 }
 
-/*returns next index and calls findWord*/
+/*returns next index and calls loadTemplates*/
 function nextIndex() {
     var context_length = context.body.length;
     if (context_length > cur_index)
       var next_index = cur_index + 1;
     else 
-        var next_index = 0;
-    console.log(next_index);
+      var next_index = 0;
     loadTemplates(next_index);
 }
 
@@ -62,9 +61,10 @@ function loadTemplates(index) {
   var current_color_code = cur_color.definition;
   var current_text_color = cur_color.textcolor;
 
-  /*call formatPage() with cur_color variables*/
+  /*call formatPage() with cur_color variables and pre-fill form with color name*/
   formatPage(current_color_code, current_text_color);
   prepareForm(current_color_name);
+  submitForm();
 /*
     $('#claim_form').submit(
         function() {
@@ -86,25 +86,24 @@ function prepareForm(current_color_name) {
     $("#color_input").html(text);
   }
 
-
 function submitForm() {
   // Variable to hold request
   var request;
 
   // Bind to the submit event of our form
  $("#claim_form").submit(function(event){
-    event.preventDefault();
 
       // Prevent default posting of form - put here to work in case of errors
-/*      event.preventDefault();
+      event.preventDefault();
 
       // Abort any pending request
       if (request) {
           request.abort();
-      }
+       }
       // setup some local variables
-/*      var $form = $(this);
-*/      var $form = $(this);
+      
+/*      var $form = $("#claim_form");*/
+      var $form = $(this);
 
       // Let's select and cache all the fields
       var $inputs = $form.find("input, select, button, textarea");
@@ -149,7 +148,8 @@ function submitForm() {
       });
 
 /*  });
-*/})
+*//*})*/
+});
 }
 
 
