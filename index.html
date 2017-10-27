@@ -17,7 +17,7 @@
   <script id="sections-template" type="text/x-handlebars-template">
     <div class="wordBlock">
       <p class="wordTitle change_color">{{word}}</p>
-      <div id="text-stuff"><a id="claim_link" onclick="showForm()">Claim this color.</a></div>
+      <div id="text-stuff" class="change_color"><a id="claim_link" onclick="showForm()">Claim this color.</a></div>
       <form id="claim_form" >
         <div class="stuff-to-hide">
         <label for="name" id="form_label_name" >Your name:</label>
@@ -36,7 +36,7 @@
 <body>
   <!-- Header -->
   <div id="header-container" class="header-footer">
-    <a href="/"><h1 id="page-title">Welcome, Baby Flane!</h1></a>
+    <h1 id="page-title">Welcome, Baby Flane!</h1>
     <a id="submit-link" onclick="nextIndex()">Don't like this color? Try another.</a>
   </div>
 
