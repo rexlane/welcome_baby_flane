@@ -21,14 +21,12 @@ function initializeTabletopObject(dataSpreadsheet){
 
 function pullDataFromTabletop(data, tabletop) {
   words = data
-/*  words = data.responses.elements*/
   for (i in words) {
     context["body"].push(words[i]);
     color = words[i].word;
   }
 randomIndex();
 };
-
 
 /*returns random index and calls loadTemplates*/
 function randomIndex() {
@@ -134,6 +132,7 @@ function submitForm() {
               "The following error occurred: "+
               textStatus, errorThrown
           );
+          oops();
       });
 
       // Callback handler that will be called regardless
@@ -154,5 +153,11 @@ function showForm() {
 function thankYou() {
 /*  $(".stuff-to-hide").hide();
 */  $("#text-stuff").html("<p>Thank you!</p>");
+  showForm();
+}
+
+function oops() {
+/*  $(".stuff-to-hide").hide();
+*/  $("#text-stuff").html("<p>Oops, something went wrong. Reload and try again.</p>");
   showForm();
 }
