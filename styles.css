@@ -56,6 +56,14 @@
   border: 2px #3f3f3f solid;
 }
 
+#thank-you {
+/*  margin: 20px;
+  margin-top: 50px;*/
+  color: #3f3f3f;
+  font-size: 12pt;
+  padding: 10px;
+}
+
 #name_input {
    background-color: #f6f6f6;
    width: 80%;

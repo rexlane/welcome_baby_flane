@@ -120,6 +120,7 @@ function submitForm() {
 
       // Log a message to the console
           console.log("Hooray, it worked!");
+          thankYou();
       });
 
       // Callback handler that will be called on failure
@@ -145,4 +146,10 @@ function submitForm() {
 
 function showForm() {
   $("#claim_form").toggle();
+}
+
+function thankYou() {
+  $(".stuff-to-hide").hide();
+  $("#thank-you-div").html("<p id='thank-you'>Thank you!</p>");
+
 }

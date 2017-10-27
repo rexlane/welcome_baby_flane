@@ -19,11 +19,15 @@
       <p class="wordTitle change_color">{{word}}</p>
       <a id="claim_link" onclick="showForm()">Claim this color.</a>
       <form id="claim_form" >
-        <label for="name" id="form_label_name">Your name:</label>
-        <br>
-        <input type="text" name="name" id="name_input"><br>
-        <span id="color_input" class="hidden"></span>
+        <div class="stuff-to-hide">
+        <label for="name" id="form_label_name" >Your name:</label>
+        <br >
+        <input type="text" name="name" id="name_input" ><br>
+        <span id="color_input" class="hidden" ></span>
         <input type="submit" id = "submit_button" value="Claim it." >
+      </div>
+        <div id="thank-you-div"></div>
+
     </form>
     </div>    
   </script>
