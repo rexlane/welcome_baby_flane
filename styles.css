@@ -45,7 +45,12 @@
    
 #claim_link {
   font-style: italic;
-  font-size: 120%;
+  font-size: 16pt;
+}
+
+#text-stuff {
+  font-style: italic;
+  font-size: 16pt;
 }
 
 #claim_form {

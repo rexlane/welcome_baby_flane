@@ -72,6 +72,7 @@ function loadTemplates(index) {
 function formatPage(current_color_code, current_text_color) {
    $("body").css("background-color",current_color_code);
    $(".change_color").css("color",current_text_color);
+   $("#text-stuff").css("color",current_text_color);
    $("#claim_link").css("color",current_text_color);
 }
 
@@ -151,7 +152,7 @@ function showForm() {
 }
 
 function thankYou() {
-  $(".stuff-to-hide").hide();
-  $("#thank-you-div").html("<p id='thank-you'>Thank you!</p>");
-
+/*  $(".stuff-to-hide").hide();
+*/  $("#text-stuff").html("<p>Thank you!</p>");
+  showForm();
 }
