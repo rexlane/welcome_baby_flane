@@ -14,12 +14,14 @@ function initializeTabletopObject(dataSpreadsheet){
     key: dataSpreadsheet,
     callback: pullDataFromTabletop,
     debug: false,
-    prettyColumnNames: false
+    prettyColumnNames: false,
+    simpleSheet: true
   });
 }
 
 function pullDataFromTabletop(data, tabletop) {
-  words = data.responses.elements
+  words = data
+/*  words = data.responses.elements*/
   for (i in words) {
     context["body"].push(words[i]);
     color = words[i].word;
